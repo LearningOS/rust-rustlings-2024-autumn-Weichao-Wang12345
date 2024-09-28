@@ -48,7 +48,7 @@ impl State {
         //self.quit=message.Quit;
         //self.message=message.Echo;
         match message {  
-            Message::Quit => self.quit(),  
+             self.quit()=Message::Quit,  
             Message::Echo(s) => self.echo(s),  
             Message::Move(p) => self.move_position(p),  
             Message::ChangeColor(r, g, b) => self.change_color((r, g, b)),  
