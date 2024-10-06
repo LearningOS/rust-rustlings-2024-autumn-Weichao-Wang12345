@@ -18,11 +18,9 @@
 //
 // Execute `rustlings hint box1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 #[derive(PartialEq, Debug)]
 pub enum List {
-    Cons(i32, List),
+    Cons(i32, Box<List>),
     Nil,
 }
 
@@ -33,13 +31,15 @@ fn main() {
         create_non_empty_list()
     );
 }
-
+use crate::List::{Cons, Nil};
 pub fn create_empty_list() -> List {
-    todo!()
+    let list_1 = Nil;
+    list_1
 }
 
 pub fn create_non_empty_list() -> List {
-    todo!()
+    let list_2=Cons(3, Box::new(Nil));
+    list_2
 }
 
 #[cfg(test)]
